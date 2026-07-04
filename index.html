@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Norsk-Tyrkisk Slang (NTS) – Ultimate v9</title>
+<style>
+:root{--blue:#00205B;--red:#BA0C2F;}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#222}
+.dark{background:#111;color:#eee}
+nav{position:sticky;top:0;background:var(--blue);padding:14px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;z-index:999}
+nav a,nav button{color:#fff;background:none;border:none;text-decoration:none;font-weight:bold;cursor:pointer}
+.hero{background:linear-gradient(135deg,var(--blue),var(--red));color:white;padding:50px 20px;text-align:center}
+.section{background:#fff;margin:20px;border-radius:18px;padding:25px;box-shadow:0 5px 18px rgba(0,0,0,.08)}
+.dark .section{background:#1d1d1d;color:#eee}
+.logo-wrap{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;align-items:center}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px}
+input,select,button{padding:10px;border-radius:10px;border:1px solid #ccc}
+.table-wrap{overflow:auto}
+table{width:100%;min-width:1800px;border-collapse:collapse}
+th,td{padding:12px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}
+th{background:var(--blue);color:white;position:sticky;top:0}
+#alphabetFilter{display:flex;gap:6px;flex-wrap:wrap;margin:15px 0}
+#alphabetFilter button{border:none;cursor:pointer}
+@media(max-width:768px){nav{gap:10px}}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#home" data-i18n="home">Home</a>
+<a href="#about" data-i18n="about">About</a>
+<a href="#dictionary" data-i18n="dictionary">Dictionary</a>
+<a href="#rules" data-i18n="rules">Rules</a>
+<a href="#contact" data-i18n="contact">Contact</a>
+<button onclick="setLang('no')">🇳🇴</button>
+<button onclick="setLang('en')">🇬🇧</button>
+<button onclick="setLang('tr')">🇹🇷</button>
+<button id="darkBtn">🌙</button>
+</nav>
+
+<section id="home" class="hero">
+<div class="logo-wrap">
+<div>
+<svg width="140" height="140" viewBox="0 0 140 140">
+<circle cx="70" cy="70" r="65" fill="#BA0C2F"/>
+<rect x="58" y="15" width="24" height="110" fill="white"/>
+<rect x="15" y="58" width="110" height="24" fill="white"/>
+<rect x="63" y="15" width="14" height="110" fill="#00205B"/>
+<rect x="15" y="63" width="110" height="14" fill="#00205B"/>
+<text x="70" y="78" text-anchor="middle" fill="white" font-size="22">NTS</text>
+</svg>
+<h3>NTS Logo</h3>
+</div>
+
+<div>
+<svg width="170" height="250" viewBox="0 0 170 250">
+<path d="M84 8 L110 30 L102 58 L122 92 L116 128 L132 168 L115 220 L80 235 L52 185 L60 145 L45 104 L58 64 Z"
+fill="#00205B" stroke="#BA0C2F" stroke-width="4"/>
+</svg>
+<h3>Norway SVG</h3>
+</div>
+</div>
+
+<h1>🇳🇴 Norsk-Tyrkisk Slang (NTS)</h1>
+<p id="heroText">A voluntary linguistic and cultural synthesis project based on Norwegian grammar principles and the V2 rule.</p>
+</section>
+
+<section id="about" class="section">
+<h2 id="aboutTitle">About</h2>
+<p id="aboutText">NTS yeni bir dil değildir. Norveççe grameri ve V2 ilkesine bağlı gönüllü bir sosyolekttir.</p>
+</section>
+
+<section id="dictionary" class="section">
+<h2 id="dictTitle">📚 Dictionary</h2>
+<p><strong>137</strong> kayıt yüklendi.</p>
+
+<div class="controls">
+<input id="searchInput" placeholder="Ara...">
+<select id="categoryFilter">
+<option value="">Tüm Kategoriler</option>
+<option>Duygu/Durum</option><option>Gençlik/Stil</option><option>Günlük İfade</option><option>Hitap/Ünlem</option><option>Para/Sokak</option><option>Sıfat/Hakaret</option><option>Yiyecek/İçecek</option>
+</select>
+<button onclick="downloadCSV()">📤 CSV</button>
+<button onclick="downloadExcel()">📊 Excel</button>
+<button onclick="window.print()">📄 PDF</button>
+</div>
+
+<div id="alphabetFilter"></div>
+
+<div class="table-wrap">
+<table id="dictionaryTable">
+<thead>
+<tr>
+<th>⭐</th>
+<th>No</th>
+<th>🏷️ Kategori</th>
+<th>Türkçe Kök</th>
+<th>Önerilen Slang</th>
+<th>🔊 IPA</th>
+<th>🇳🇴 Norsk</th>
+<th>🇬🇧 English</th>
+<th>🇹🇷 Türkçe</th>
+</tr>
+</thead>
+<tbody>
+
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="1">⭐</button></td>
+      <td>1</td>
+      <td>Hitap/Ünlem</td>
+      <td>Abi</td>
+      <td>Abien</td>
+      <td>/abien/</td>
+      <td>"Abien" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Abien" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Abien" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="2">⭐</button></td>
+      <td>2</td>
+      <td>Hitap/Ünlem</td>
+      <td>Kanka</td>
+      <td>Kænkz</td>
+      <td>/kænkz/</td>
+      <td>"Kænkz" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kænkz" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kænkz" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="3">⭐</button></td>
+      <td>3</td>
+      <td>Hitap/Ünlem</td>
+      <td>Yenge</td>
+      <td>Jænge</td>
+      <td>/jænge/</td>
+      <td>"Jænge" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Jænge" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Jænge" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="4">⭐</button></td>
+      <td>4</td>
+      <td>Hitap/Ünlem</td>
+      <td>Teyze</td>
+      <td>Teisa</td>
+      <td>/teisa/</td>
+      <td>"Teisa" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Teisa" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Teisa" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="5">⭐</button></td>
+      <td>5</td>
+      <td>Hitap/Ünlem</td>
+      <td>Amca</td>
+      <td>Amsja</td>
+      <td>/amsja/</td>
+      <td>"Amsja" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Amsja" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Amsja" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="6">⭐</button></td>
+      <td>6</td>
+      <td>Hitap/Ünlem</td>
+      <td>Dayı</td>
+      <td>Dajen</td>
+      <td>/dajen/</td>
+      <td>"Dajen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Dajen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Dajen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="7">⭐</button></td>
+      <td>7</td>
+      <td>Hitap/Ünlem</td>
+      <td>Hala</td>
+      <td>Hæla</td>
+      <td>/hæla/</td>
+      <td>"Hæla" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Hæla" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Hæla" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="8">⭐</button></td>
+      <td>8</td>
+      <td>Hitap/Ünlem</td>
+      <td>Usta</td>
+      <td>Ustaen</td>
+      <td>/ustaen/</td>
+      <td>"Ustaen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Ustaen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Ustaen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="9">⭐</button></td>
+      <td>9</td>
+      <td>Hitap/Ünlem</td>
+      <td>Reis</td>
+      <td>Ræis</td>
+      <td>/ræis/</td>
+      <td>"Ræis" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Ræis" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Ræis" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="10">⭐</button></td>
+      <td>10</td>
+      <td>Hitap/Ünlem</td>
+      <td>Hoca</td>
+      <td>Hodsja</td>
+      <td>/hodsja/</td>
+      <td>"Hodsja" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Hodsja" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Hodsja" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="11">⭐</button></td>
+      <td>11</td>
+      <td>Hitap/Ünlem</td>
+      <td>Kral</td>
+      <td>Krælen</td>
+      <td>/krælen/</td>
+      <td>"Krælen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Krælen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Krælen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="12">⭐</button></td>
+      <td>12</td>
+      <td>Hitap/Ünlem</td>
+      <td>Paşa</td>
+      <td>Pæsja</td>
+      <td>/pæsja/</td>
+      <td>"Pæsja" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Pæsja" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Pæsja" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="13">⭐</button></td>
+      <td>13</td>
+      <td>Hitap/Ünlem</td>
+      <td>Aslan</td>
+      <td>Aslanen</td>
+      <td>/aslanen/</td>
+      <td>"Aslanen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Aslanen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Aslanen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="14">⭐</button></td>
+      <td>14</td>
+      <td>Hitap/Ünlem</td>
+      <td>Koçum</td>
+      <td>Kotsjum</td>
+      <td>/kotsjum/</td>
+      <td>"Kotsjum" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kotsjum" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kotsjum" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="15">⭐</button></td>
+      <td>15</td>
+      <td>Hitap/Ünlem</td>
+      <td>Kuzum</td>
+      <td>Kuson</td>
+      <td>/kuson/</td>
+      <td>"Kuson" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kuson" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kuson" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="16">⭐</button></td>
+      <td>16</td>
+      <td>Hitap/Ünlem</td>
+      <td>Tatlım</td>
+      <td>Tætli</td>
+      <td>/tætli/</td>
+      <td>"Tætli" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tætli" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tætli" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="17">⭐</button></td>
+      <td>17</td>
+      <td>Hitap/Ünlem</td>
+      <td>Aşkım</td>
+      <td>Asjkim</td>
+      <td>/asjkim/</td>
+      <td>"Asjkim" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Asjkim" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Asjkim" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="18">⭐</button></td>
+      <td>18</td>
+      <td>Hitap/Ünlem</td>
+      <td>Birtanem</td>
+      <td>Bitænen</td>
+      <td>/bitænen/</td>
+      <td>"Bitænen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Bitænen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Bitænen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="19">⭐</button></td>
+      <td>19</td>
+      <td>Hitap/Ünlem</td>
+      <td>Yavru</td>
+      <td>Jævru</td>
+      <td>/jævru/</td>
+      <td>"Jævru" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Jævru" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Jævru" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="20">⭐</button></td>
+      <td>20</td>
+      <td>Hitap/Ünlem</td>
+      <td>Bebe</td>
+      <td>Bæbe</td>
+      <td>/bæbe/</td>
+      <td>"Bæbe" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Bæbe" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Bæbe" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="21">⭐</button></td>
+      <td>21</td>
+      <td>Hitap/Ünlem</td>
+      <td>Canım</td>
+      <td>Djanim</td>
+      <td>/djanim/</td>
+      <td>"Djanim" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Djanim" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Djanim" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="22">⭐</button></td>
+      <td>22</td>
+      <td>Hitap/Ünlem</td>
+      <td>Abla</td>
+      <td>Æbla</td>
+      <td>/æbla/</td>
+      <td>"Æbla" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Æbla" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Æbla" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="23">⭐</button></td>
+      <td>23</td>
+      <td>Hitap/Ünlem</td>
+      <td>Vallahi</td>
+      <td>Vallahen</td>
+      <td>/vallahen/</td>
+      <td>"Vallahen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Vallahen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Vallahen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="24">⭐</button></td>
+      <td>24</td>
+      <td>Hitap/Ünlem</td>
+      <td>Yallah</td>
+      <td>Jallah</td>
+      <td>/jallah/</td>
+      <td>"Jallah" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Jallah" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Jallah" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="25">⭐</button></td>
+      <td>25</td>
+      <td>Hitap/Ünlem</td>
+      <td>İnşallah</td>
+      <td>Insja</td>
+      <td>/insja/</td>
+      <td>"Insja" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Insja" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Insja" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="26">⭐</button></td>
+      <td>26</td>
+      <td>Hitap/Ünlem</td>
+      <td>Maşallah</td>
+      <td>Masja</td>
+      <td>/masja/</td>
+      <td>"Masja" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Masja" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Masja" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="27">⭐</button></td>
+      <td>27</td>
+      <td>Hitap/Ünlem</td>
+      <td>Sübhanallah</td>
+      <td>Søbhan</td>
+      <td>/søbhan/</td>
+      <td>"Søbhan" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Søbhan" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Søbhan" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="28">⭐</button></td>
+      <td>28</td>
+      <td>Hitap/Ünlem</td>
+      <td>Estağfurullah</td>
+      <td>Estaffen</td>
+      <td>/estaffen/</td>
+      <td>"Estaffen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Estaffen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Estaffen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="29">⭐</button></td>
+      <td>29</td>
+      <td>Hitap/Ünlem</td>
+      <td>Bismillah</td>
+      <td>Bismil</td>
+      <td>/bismil/</td>
+      <td>"Bismil" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Bismil" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Bismil" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="30">⭐</button></td>
+      <td>30</td>
+      <td>Hitap/Ünlem</td>
+      <td>Elhamdülillah</td>
+      <td>Elhæm</td>
+      <td>/elhæm/</td>
+      <td>"Elhæm" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Elhæm" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Elhæm" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="31">⭐</button></td>
+      <td>31</td>
+      <td>Hitap/Ünlem</td>
+      <td>Ah</td>
+      <td>Æh</td>
+      <td>/æh/</td>
+      <td>"Æh" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Æh" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Æh" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="32">⭐</button></td>
+      <td>32</td>
+      <td>Hitap/Ünlem</td>
+      <td>Vah</td>
+      <td>Væh</td>
+      <td>/væh/</td>
+      <td>"Væh" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Væh" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Væh" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="33">⭐</button></td>
+      <td>33</td>
+      <td>Hitap/Ünlem</td>
+      <td>Tüh</td>
+      <td>Tøh</td>
+      <td>/tøh/</td>
+      <td>"Tøh" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tøh" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tøh" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="34">⭐</button></td>
+      <td>34</td>
+      <td>Hitap/Ünlem</td>
+      <td>Yazık</td>
+      <td>Jæzik</td>
+      <td>/jæzik/</td>
+      <td>"Jæzik" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Jæzik" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Jæzik" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="35">⭐</button></td>
+      <td>35</td>
+      <td>Hitap/Ünlem</td>
+      <td>Eyvah</td>
+      <td>Eijvah</td>
+      <td>/eijvah/</td>
+      <td>"Eijvah" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Eijvah" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Eijvah" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Hitap/Ünlem">
+      <td><button class="fav-btn" data-id="36">⭐</button></td>
+      <td>36</td>
+      <td>Hitap/Ünlem</td>
+      <td>Aman</td>
+      <td>Amanæ</td>
+      <td>/amanæ/</td>
+      <td>"Amanæ" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Amanæ" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Amanæ" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="37">⭐</button></td>
+      <td>37</td>
+      <td>Duygu/Durum</td>
+      <td>Ayıp</td>
+      <td>Ayipen</td>
+      <td>/ayipen/</td>
+      <td>"Ayipen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Ayipen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Ayipen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="38">⭐</button></td>
+      <td>38</td>
+      <td>Duygu/Durum</td>
+      <td>Haram</td>
+      <td>Haramen</td>
+      <td>/haramen/</td>
+      <td>"Haramen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Haramen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Haramen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="39">⭐</button></td>
+      <td>39</td>
+      <td>Duygu/Durum</td>
+      <td>Helal</td>
+      <td>Helalig</td>
+      <td>/helalig/</td>
+      <td>"Helalig" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Helalig" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Helalig" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="40">⭐</button></td>
+      <td>40</td>
+      <td>Duygu/Durum</td>
+      <td>Gurbet</td>
+      <td>Gurbeten</td>
+      <td>/gurbeten/</td>
+      <td>"Gurbeten" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Gurbeten" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Gurbeten" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="41">⭐</button></td>
+      <td>41</td>
+      <td>Duygu/Durum</td>
+      <td>Dert</td>
+      <td>Dærte</td>
+      <td>/dærte/</td>
+      <td>"Dærte" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Dærte" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Dærte" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="42">⭐</button></td>
+      <td>42</td>
+      <td>Duygu/Durum</td>
+      <td>Huzur</td>
+      <td>Huzuren</td>
+      <td>/huzuren/</td>
+      <td>"Huzuren" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Huzuren" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Huzuren" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="43">⭐</button></td>
+      <td>43</td>
+      <td>Duygu/Durum</td>
+      <td>Sıkıntı</td>
+      <td>Sjikinti</td>
+      <td>/sjikinti/</td>
+      <td>"Sjikinti" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Sjikinti" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Sjikinti" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="44">⭐</button></td>
+      <td>44</td>
+      <td>Duygu/Durum</td>
+      <td>Kafa</td>
+      <td>Kæfen</td>
+      <td>/kæfen/</td>
+      <td>"Kæfen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kæfen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kæfen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="45">⭐</button></td>
+      <td>45</td>
+      <td>Duygu/Durum</td>
+      <td>Nazar</td>
+      <td>Næsj</td>
+      <td>/næsj/</td>
+      <td>"Næsj" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Næsj" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Næsj" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="46">⭐</button></td>
+      <td>46</td>
+      <td>Duygu/Durum</td>
+      <td>Kısmet</td>
+      <td>Kismeten</td>
+      <td>/kismeten/</td>
+      <td>"Kismeten" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kismeten" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kismeten" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="47">⭐</button></td>
+      <td>47</td>
+      <td>Duygu/Durum</td>
+      <td>Kurban</td>
+      <td>Kurbanen</td>
+      <td>/kurbanen/</td>
+      <td>"Kurbanen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kurbanen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kurbanen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="48">⭐</button></td>
+      <td>48</td>
+      <td>Duygu/Durum</td>
+      <td>Ruh</td>
+      <td>Ruhen</td>
+      <td>/ruhen/</td>
+      <td>"Ruhen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Ruhen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Ruhen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="49">⭐</button></td>
+      <td>49</td>
+      <td>Duygu/Durum</td>
+      <td>Sevda</td>
+      <td>Sævda</td>
+      <td>/sævda/</td>
+      <td>"Sævda" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Sævda" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Sævda" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="50">⭐</button></td>
+      <td>50</td>
+      <td>Duygu/Durum</td>
+      <td>Hasret</td>
+      <td>Hæsret</td>
+      <td>/hæsret/</td>
+      <td>"Hæsret" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Hæsret" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Hæsret" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="51">⭐</button></td>
+      <td>51</td>
+      <td>Duygu/Durum</td>
+      <td>Özlem</td>
+      <td>Øzlemen</td>
+      <td>/øzlemen/</td>
+      <td>"Øzlemen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Øzlemen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Øzlemen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="52">⭐</button></td>
+      <td>52</td>
+      <td>Duygu/Durum</td>
+      <td>Bereket</td>
+      <td>Bæreket</td>
+      <td>/bæreket/</td>
+      <td>"Bæreket" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Bæreket" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Bæreket" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="53">⭐</button></td>
+      <td>53</td>
+      <td>Duygu/Durum</td>
+      <td>Nasip</td>
+      <td>Næsip</td>
+      <td>/næsip/</td>
+      <td>"Næsip" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Næsip" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Næsip" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="54">⭐</button></td>
+      <td>54</td>
+      <td>Duygu/Durum</td>
+      <td>Kader</td>
+      <td>Kæder</td>
+      <td>/kæder/</td>
+      <td>"Kæder" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kæder" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kæder" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="55">⭐</button></td>
+      <td>55</td>
+      <td>Duygu/Durum</td>
+      <td>Şans</td>
+      <td>Sjæns</td>
+      <td>/sjæns/</td>
+      <td>"Sjæns" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Sjæns" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Sjæns" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="56">⭐</button></td>
+      <td>56</td>
+      <td>Duygu/Durum</td>
+      <td>Baht</td>
+      <td>Bæht</td>
+      <td>/bæht/</td>
+      <td>"Bæht" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Bæht" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Bæht" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="57">⭐</button></td>
+      <td>57</td>
+      <td>Duygu/Durum</td>
+      <td>Talih</td>
+      <td>Tælih</td>
+      <td>/tælih/</td>
+      <td>"Tælih" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tælih" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tælih" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="58">⭐</button></td>
+      <td>58</td>
+      <td>Duygu/Durum</td>
+      <td>Muhabbet</td>
+      <td>Møhabbet</td>
+      <td>/møhabbet/</td>
+      <td>"Møhabbet" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Møhabbet" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Møhabbet" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="59">⭐</button></td>
+      <td>59</td>
+      <td>Duygu/Durum</td>
+      <td>Sohbet</td>
+      <td>Søhbet</td>
+      <td>/søhbet/</td>
+      <td>"Søhbet" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Søhbet" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Søhbet" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="60">⭐</button></td>
+      <td>60</td>
+      <td>Duygu/Durum</td>
+      <td>Dedikodu</td>
+      <td>Dædikødu</td>
+      <td>/dædikødu/</td>
+      <td>"Dædikødu" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Dædikødu" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Dædikødu" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="61">⭐</button></td>
+      <td>61</td>
+      <td>Duygu/Durum</td>
+      <td>Sevgi</td>
+      <td>Sævgi</td>
+      <td>/sævgi/</td>
+      <td>"Sævgi" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Sævgi" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Sævgi" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Duygu/Durum">
+      <td><button class="fav-btn" data-id="62">⭐</button></td>
+      <td>62</td>
+      <td>Duygu/Durum</td>
+      <td>Saygı</td>
+      <td>Sæjgi</td>
+      <td>/sæjgi/</td>
+      <td>"Sæjgi" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Sæjgi" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Sæjgi" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="63">⭐</button></td>
+      <td>63</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Kötü</td>
+      <td>Kjøtu</td>
+      <td>/kjøtu/</td>
+      <td>"Kjøtu" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kjøtu" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kjøtu" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="64">⭐</button></td>
+      <td>64</td>
+      <td>Sıfat/Hakaret</td>
+      <td>İyi</td>
+      <td>Iji</td>
+      <td>/iji/</td>
+      <td>"Iji" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Iji" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Iji" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="65">⭐</button></td>
+      <td>65</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Güzel</td>
+      <td>Gøzel</td>
+      <td>/gøzel/</td>
+      <td>"Gøzel" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Gøzel" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Gøzel" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="66">⭐</button></td>
+      <td>66</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Çirkin</td>
+      <td>Tjørkin</td>
+      <td>/tjørkin/</td>
+      <td>"Tjørkin" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tjørkin" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tjørkin" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="67">⭐</button></td>
+      <td>67</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Tatlı</td>
+      <td>Tætli</td>
+      <td>/tætli/</td>
+      <td>"Tætli" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tætli" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tætli" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="68">⭐</button></td>
+      <td>68</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Deli</td>
+      <td>Dæli</td>
+      <td>/dæli/</td>
+      <td>"Dæli" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Dæli" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Dæli" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="69">⭐</button></td>
+      <td>69</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Manyak</td>
+      <td>Mænjak</td>
+      <td>/mænjak/</td>
+      <td>"Mænjak" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Mænjak" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Mænjak" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="70">⭐</button></td>
+      <td>70</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Sapık</td>
+      <td>Sæpik</td>
+      <td>/sæpik/</td>
+      <td>"Sæpik" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Sæpik" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Sæpik" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="71">⭐</button></td>
+      <td>71</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Psikopat</td>
+      <td>Piskøpat</td>
+      <td>/piskøpat/</td>
+      <td>"Piskøpat" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Piskøpat" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Piskøpat" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="72">⭐</button></td>
+      <td>72</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Kafasız</td>
+      <td>Kæfasiz</td>
+      <td>/kæfasiz/</td>
+      <td>"Kæfasiz" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kæfasiz" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kæfasiz" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="73">⭐</button></td>
+      <td>73</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Akılsız</td>
+      <td>Ækilsiz</td>
+      <td>/ækilsiz/</td>
+      <td>"Ækilsiz" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Ækilsiz" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Ækilsiz" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="74">⭐</button></td>
+      <td>74</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Zeki</td>
+      <td>Zæki</td>
+      <td>/zæki/</td>
+      <td>"Zæki" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Zæki" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Zæki" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="75">⭐</button></td>
+      <td>75</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Kurnaz</td>
+      <td>Kørnaz</td>
+      <td>/kørnaz/</td>
+      <td>"Kørnaz" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kørnaz" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kørnaz" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="76">⭐</button></td>
+      <td>76</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Çakal</td>
+      <td>Tjakal</td>
+      <td>/tjakal/</td>
+      <td>"Tjakal" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tjakal" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tjakal" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="77">⭐</button></td>
+      <td>77</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Tilki</td>
+      <td>Tjlki</td>
+      <td>/tjlki/</td>
+      <td>"Tjlki" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tjlki" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tjlki" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="78">⭐</button></td>
+      <td>78</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Ayı</td>
+      <td>Æji</td>
+      <td>/æji/</td>
+      <td>"Æji" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Æji" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Æji" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="79">⭐</button></td>
+      <td>79</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Öküz</td>
+      <td>Økøz</td>
+      <td>/økøz/</td>
+      <td>"Økøz" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Økøz" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Økøz" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="80">⭐</button></td>
+      <td>80</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Eşek</td>
+      <td>Æsjek</td>
+      <td>/æsjek/</td>
+      <td>"Æsjek" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Æsjek" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Æsjek" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="81">⭐</button></td>
+      <td>81</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Aptal</td>
+      <td>Æptal</td>
+      <td>/æptal/</td>
+      <td>"Æptal" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Æptal" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Æptal" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="82">⭐</button></td>
+      <td>82</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Salak</td>
+      <td>Sælak</td>
+      <td>/sælak/</td>
+      <td>"Sælak" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Sælak" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Sælak" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="83">⭐</button></td>
+      <td>83</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Çılgın</td>
+      <td>Tjilgin</td>
+      <td>/tjilgin/</td>
+      <td>"Tjilgin" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tjilgin" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tjilgin" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="84">⭐</button></td>
+      <td>84</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Garip</td>
+      <td>Gærip</td>
+      <td>/gærip/</td>
+      <td>"Gærip" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Gærip" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Gærip" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="85">⭐</button></td>
+      <td>85</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Tuhaf</td>
+      <td>Tøhaf</td>
+      <td>/tøhaf/</td>
+      <td>"Tøhaf" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tøhaf" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tøhaf" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="86">⭐</button></td>
+      <td>86</td>
+      <td>Sıfat/Hakaret</td>
+      <td>İlginç</td>
+      <td>Ilgintj</td>
+      <td>/ilgintj/</td>
+      <td>"Ilgintj" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Ilgintj" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Ilgintj" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="87">⭐</button></td>
+      <td>87</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Harika</td>
+      <td>Hærika</td>
+      <td>/hærika/</td>
+      <td>"Hærika" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Hærika" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Hærika" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="88">⭐</button></td>
+      <td>88</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Süper</td>
+      <td>Søper</td>
+      <td>/søper/</td>
+      <td>"Søper" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Søper" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Søper" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="89">⭐</button></td>
+      <td>89</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Berbat</td>
+      <td>Bærbat</td>
+      <td>/bærbat/</td>
+      <td>"Bærbat" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Bærbat" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Bærbat" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="90">⭐</button></td>
+      <td>90</td>
+      <td>Sıfat/Hakaret</td>
+      <td>İğrenç</td>
+      <td>Igrentj</td>
+      <td>/igrentj/</td>
+      <td>"Igrentj" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Igrentj" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Igrentj" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Sıfat/Hakaret">
+      <td><button class="fav-btn" data-id="91">⭐</button></td>
+      <td>91</td>
+      <td>Sıfat/Hakaret</td>
+      <td>Korkunç</td>
+      <td>Kørkuntj</td>
+      <td>/kørkuntj/</td>
+      <td>"Kørkuntj" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kørkuntj" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kørkuntj" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Gençlik/Stil">
+      <td><button class="fav-btn" data-id="92">⭐</button></td>
+      <td>92</td>
+      <td>Gençlik/Stil</td>
+      <td>Moda</td>
+      <td>Møda</td>
+      <td>/møda/</td>
+      <td>"Møda" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Møda" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Møda" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Gençlik/Stil">
+      <td><button class="fav-btn" data-id="93">⭐</button></td>
+      <td>93</td>
+      <td>Gençlik/Stil</td>
+      <td>Havalı</td>
+      <td>Hævali</td>
+      <td>/hævali/</td>
+      <td>"Hævali" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Hævali" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Hævali" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Gençlik/Stil">
+      <td><button class="fav-btn" data-id="94">⭐</button></td>
+      <td>94</td>
+      <td>Gençlik/Stil</td>
+      <td>Caka</td>
+      <td>Tjæka</td>
+      <td>/tjæka/</td>
+      <td>"Tjæka" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tjæka" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tjæka" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Gençlik/Stil">
+      <td><button class="fav-btn" data-id="95">⭐</button></td>
+      <td>95</td>
+      <td>Gençlik/Stil</td>
+      <td>Poz</td>
+      <td>Pøs</td>
+      <td>/pøs/</td>
+      <td>"Pøs" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Pøs" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Pøs" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Gençlik/Stil">
+      <td><button class="fav-btn" data-id="96">⭐</button></td>
+      <td>96</td>
+      <td>Gençlik/Stil</td>
+      <td>Artistlik</td>
+      <td>Ærtistlik</td>
+      <td>/ærtistlik/</td>
+      <td>"Ærtistlik" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Ærtistlik" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Ærtistlik" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Gençlik/Stil">
+      <td><button class="fav-btn" data-id="97">⭐</button></td>
+      <td>97</td>
+      <td>Gençlik/Stil</td>
+      <td>Şaka</td>
+      <td>Sjæka</td>
+      <td>/sjæka/</td>
+      <td>"Sjæka" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Sjæka" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Sjæka" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Gençlik/Stil">
+      <td><button class="fav-btn" data-id="98">⭐</button></td>
+      <td>98</td>
+      <td>Gençlik/Stil</td>
+      <td>Komik</td>
+      <td>Kømikk</td>
+      <td>/kømikk/</td>
+      <td>"Kømikk" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kømikk" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kømikk" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="99">⭐</button></td>
+      <td>99</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Baklava</td>
+      <td>Bæklæve</td>
+      <td>/bæklæve/</td>
+      <td>"Bæklæve" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Bæklæve" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Bæklæve" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="100">⭐</button></td>
+      <td>100</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Lokum</td>
+      <td>Løkme</td>
+      <td>/løkme/</td>
+      <td>"Løkme" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Løkme" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Løkme" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="101">⭐</button></td>
+      <td>101</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Çörek</td>
+      <td>Tjørek</td>
+      <td>/tjørek/</td>
+      <td>"Tjørek" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tjørek" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tjørek" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="102">⭐</button></td>
+      <td>102</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Börek</td>
+      <td>Børeken</td>
+      <td>/børeken/</td>
+      <td>"Børeken" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Børeken" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Børeken" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="103">⭐</button></td>
+      <td>103</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Simit</td>
+      <td>Simiten</td>
+      <td>/simiten/</td>
+      <td>"Simiten" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Simiten" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Simiten" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="104">⭐</button></td>
+      <td>104</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Poğaça</td>
+      <td>Pøgatsja</td>
+      <td>/pøgatsja/</td>
+      <td>"Pøgatsja" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Pøgatsja" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Pøgatsja" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="105">⭐</button></td>
+      <td>105</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Pide</td>
+      <td>Pida</td>
+      <td>/pida/</td>
+      <td>"Pida" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Pida" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Pida" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="106">⭐</button></td>
+      <td>106</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Lahmacun</td>
+      <td>Læhmædjun</td>
+      <td>/læhmædjun/</td>
+      <td>"Læhmædjun" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Læhmædjun" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Læhmædjun" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="107">⭐</button></td>
+      <td>107</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Kebap</td>
+      <td>Kebaben</td>
+      <td>/kebaben/</td>
+      <td>"Kebaben" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kebaben" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kebaben" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="108">⭐</button></td>
+      <td>108</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Döner</td>
+      <td>Døneren</td>
+      <td>/døneren/</td>
+      <td>"Døneren" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Døneren" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Døneren" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="109">⭐</button></td>
+      <td>109</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Köfte</td>
+      <td>Tjøfte</td>
+      <td>/tjøfte/</td>
+      <td>"Tjøfte" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tjøfte" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tjøfte" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="110">⭐</button></td>
+      <td>110</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Sucuk</td>
+      <td>Sødjuk</td>
+      <td>/sødjuk/</td>
+      <td>"Sødjuk" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Sødjuk" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Sødjuk" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="111">⭐</button></td>
+      <td>111</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Ayran</td>
+      <td>Æjran</td>
+      <td>/æjran/</td>
+      <td>"Æjran" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Æjran" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Æjran" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="112">⭐</button></td>
+      <td>112</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Kahve</td>
+      <td>Kæfen</td>
+      <td>/kæfen/</td>
+      <td>"Kæfen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kæfen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kæfen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="113">⭐</button></td>
+      <td>113</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Çay</td>
+      <td>Sjajen</td>
+      <td>/sjajen/</td>
+      <td>"Sjajen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Sjajen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Sjajen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="114">⭐</button></td>
+      <td>114</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Rakı</td>
+      <td>Ræki</td>
+      <td>/ræki/</td>
+      <td>"Ræki" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Ræki" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Ræki" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Yiyecek/İçecek">
+      <td><button class="fav-btn" data-id="115">⭐</button></td>
+      <td>115</td>
+      <td>Yiyecek/İçecek</td>
+      <td>Bira</td>
+      <td>Biran</td>
+      <td>/biran/</td>
+      <td>"Biran" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Biran" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Biran" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="116">⭐</button></td>
+      <td>116</td>
+      <td>Günlük İfade</td>
+      <td>Merhaba</td>
+      <td>Mærhaba</td>
+      <td>/mærhaba/</td>
+      <td>"Mærhaba" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Mærhaba" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Mærhaba" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="117">⭐</button></td>
+      <td>117</td>
+      <td>Günlük İfade</td>
+      <td>Selam</td>
+      <td>Sælam</td>
+      <td>/sælam/</td>
+      <td>"Sælam" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Sælam" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Sælam" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="118">⭐</button></td>
+      <td>118</td>
+      <td>Günlük İfade</td>
+      <td>Hoşça kal</td>
+      <td>Høsjtjakal</td>
+      <td>/høsjtjakal/</td>
+      <td>"Høsjtjakal" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Høsjtjakal" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Høsjtjakal" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="119">⭐</button></td>
+      <td>119</td>
+      <td>Günlük İfade</td>
+      <td>Güle güle</td>
+      <td>Gølegøle</td>
+      <td>/gølegøle/</td>
+      <td>"Gølegøle" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Gølegøle" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Gølegøle" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="120">⭐</button></td>
+      <td>120</td>
+      <td>Günlük İfade</td>
+      <td>Görüşürüz</td>
+      <td>Gjøsjørøs</td>
+      <td>/gjøsjørøs/</td>
+      <td>"Gjøsjørøs" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Gjøsjørøs" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Gjøsjørøs" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="121">⭐</button></td>
+      <td>121</td>
+      <td>Günlük İfade</td>
+      <td>Evet</td>
+      <td>Ævet</td>
+      <td>/ævet/</td>
+      <td>"Ævet" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Ævet" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Ævet" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="122">⭐</button></td>
+      <td>122</td>
+      <td>Günlük İfade</td>
+      <td>Hayır</td>
+      <td>Hæjir</td>
+      <td>/hæjir/</td>
+      <td>"Hæjir" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Hæjir" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Hæjir" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="123">⭐</button></td>
+      <td>123</td>
+      <td>Günlük İfade</td>
+      <td>Tamam</td>
+      <td>Tæmam</td>
+      <td>/tæmam/</td>
+      <td>"Tæmam" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tæmam" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tæmam" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="124">⭐</button></td>
+      <td>124</td>
+      <td>Günlük İfade</td>
+      <td>Peki</td>
+      <td>Pæki</td>
+      <td>/pæki/</td>
+      <td>"Pæki" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Pæki" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Pæki" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="125">⭐</button></td>
+      <td>125</td>
+      <td>Günlük İfade</td>
+      <td>Yeter</td>
+      <td>Jæter</td>
+      <td>/jæter/</td>
+      <td>"Jæter" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Jæter" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Jæter" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="126">⭐</button></td>
+      <td>126</td>
+      <td>Günlük İfade</td>
+      <td>İmdat</td>
+      <td>Imdat</td>
+      <td>/imdat/</td>
+      <td>"Imdat" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Imdat" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Imdat" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="127">⭐</button></td>
+      <td>127</td>
+      <td>Günlük İfade</td>
+      <td>Teşekkür</td>
+      <td>Tæsjekkør</td>
+      <td>/tæsjekkør/</td>
+      <td>"Tæsjekkør" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Tæsjekkør" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Tæsjekkør" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="128">⭐</button></td>
+      <td>128</td>
+      <td>Günlük İfade</td>
+      <td>Lütfen</td>
+      <td>Løtfen</td>
+      <td>/løtfen/</td>
+      <td>"Løtfen" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Løtfen" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Løtfen" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Günlük İfade">
+      <td><button class="fav-btn" data-id="129">⭐</button></td>
+      <td>129</td>
+      <td>Günlük İfade</td>
+      <td>Özür</td>
+      <td>Øzør</td>
+      <td>/øzør/</td>
+      <td>"Øzør" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Øzør" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Øzør" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Para/Sokak">
+      <td><button class="fav-btn" data-id="130">⭐</button></td>
+      <td>130</td>
+      <td>Para/Sokak</td>
+      <td>Para</td>
+      <td>Pæra</td>
+      <td>/pæra/</td>
+      <td>"Pæra" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Pæra" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Pæra" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Para/Sokak">
+      <td><button class="fav-btn" data-id="131">⭐</button></td>
+      <td>131</td>
+      <td>Para/Sokak</td>
+      <td>Zengin</td>
+      <td>Zængin</td>
+      <td>/zængin/</td>
+      <td>"Zængin" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Zængin" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Zængin" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Para/Sokak">
+      <td><button class="fav-btn" data-id="132">⭐</button></td>
+      <td>132</td>
+      <td>Para/Sokak</td>
+      <td>Fakir</td>
+      <td>Fækir</td>
+      <td>/fækir/</td>
+      <td>"Fækir" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Fækir" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Fækir" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Para/Sokak">
+      <td><button class="fav-btn" data-id="133">⭐</button></td>
+      <td>133</td>
+      <td>Para/Sokak</td>
+      <td>Bedava</td>
+      <td>Bædava</td>
+      <td>/bædava/</td>
+      <td>"Bædava" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Bædava" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Bædava" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Para/Sokak">
+      <td><button class="fav-btn" data-id="134">⭐</button></td>
+      <td>134</td>
+      <td>Para/Sokak</td>
+      <td>Beleş</td>
+      <td>Bælesj</td>
+      <td>/bælesj/</td>
+      <td>"Bælesj" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Bælesj" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Bælesj" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Para/Sokak">
+      <td><button class="fav-btn" data-id="135">⭐</button></td>
+      <td>135</td>
+      <td>Para/Sokak</td>
+      <td>Borç</td>
+      <td>Børtj</td>
+      <td>/børtj/</td>
+      <td>"Børtj" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Børtj" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Børtj" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Para/Sokak">
+      <td><button class="fav-btn" data-id="136">⭐</button></td>
+      <td>136</td>
+      <td>Para/Sokak</td>
+      <td>Patron</td>
+      <td>Pætron</td>
+      <td>/pætron/</td>
+      <td>"Pætron" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Pætron" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Pætron" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+    <tr data-category="Para/Sokak">
+      <td><button class="fav-btn" data-id="137">⭐</button></td>
+      <td>137</td>
+      <td>Para/Sokak</td>
+      <td>Kasa</td>
+      <td>Kæsa</td>
+      <td>/kæsa/</td>
+      <td>"Kæsa" er et uformelt uttrykk brukt innenfor norsk grammatikk og V2-prinsippet.</td>
+      <td>"Kæsa" is an informal expression used within Norwegian grammar and the V2 principle.</td>
+      <td>"Kæsa" Norveççe grameri ve V2 ilkesine bağlı kullanılan gayriresmî bir ifadedir.</td>
+    </tr>
+    
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="rules" class="section">
+<h2>📜 V2 Rules</h2>
+<p>NTS følger norsk grammatikk, norsk rettskrivning og V2-prinsippet fullt ut.</p>
+</section>
+
+<section id="contact" class="section">
+<h2>📞 Contact</h2>
+<p>Norsk-Tyrkisk Slang Project (NTS)</p>
+</section>
+
+<script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+<script>
+document.getElementById('darkBtn').onclick=()=>document.body.classList.toggle('dark');
+
+const texts={
+tr:{home:'Ana Sayfa',about:'Hakkında',dictionary:'Sözlük',rules:'Kurallar',contact:'İletişim',
+hero:'Norveççe gramer ilkeleri ve V2 kuralına dayalı gönüllü bir dilsel ve kültürel sentez projesi.',
+aboutText:'NTS yeni bir dil değildir. Norveççe grameri ve V2 ilkesine bağlı gönüllü bir sosyolekttir.'},
+en:{home:'Home',about:'About',dictionary:'Dictionary',rules:'Rules',contact:'Contact',
+hero:'A voluntary linguistic and cultural synthesis project based on Norwegian grammar principles and the V2 rule.',
+aboutText:'NTS is not a new language. It fully follows Norwegian grammar and the V2 principle.'},
+no:{home:'Hjem',about:'Om',dictionary:'Ordbok',rules:'Regler',contact:'Kontakt',
+hero:'Et frivillig språklig og kulturelt synteseprosjekt basert på norsk grammatikk og V2-prinsippet.',
+aboutText:'NTS er ikke et nytt språk. Det følger norsk grammatikk og V2-prinsippet fullt ut.'}
+};
+
+function setLang(lang){
+ const t=texts[lang];
+ document.querySelector('[data-i18n=home]').textContent=t.home;
+ document.querySelector('[data-i18n=about]').textContent=t.about;
+ document.querySelector('[data-i18n=dictionary]').textContent=t.dictionary;
+ document.querySelector('[data-i18n=rules]').textContent=t.rules;
+ document.querySelector('[data-i18n=contact]').textContent=t.contact;
+ document.getElementById('heroText').textContent=t.hero;
+ document.getElementById('aboutText').textContent=t.aboutText;
+}
+
+const favs = JSON.parse(localStorage.getItem('nts-favorites')||'[]');
+document.querySelectorAll('.fav-btn').forEach(btn=>{
+ const id=btn.dataset.id;
+ if(favs.includes(id)) btn.textContent='🌟';
+ btn.onclick=()=>{
+   let arr=JSON.parse(localStorage.getItem('nts-favorites')||'[]');
+   if(arr.includes(id)){arr=arr.filter(x=>x!==id);btn.textContent='⭐';}
+   else{arr.push(id);btn.textContent='🌟';}
+   localStorage.setItem('nts-favorites',JSON.stringify(arr));
+ };
+});
+
+function applyFilters(){
+ const q=document.getElementById('searchInput').value.toLocaleUpperCase('tr-TR');
+ const cat=document.getElementById('categoryFilter').value;
+ document.querySelectorAll('#dictionaryTable tbody tr').forEach(r=>{
+   const txt=r.innerText.toLocaleUpperCase('tr-TR');
+   const okSearch=txt.includes(q);
+   const okCat=!cat || r.dataset.category===cat;
+   const okLetter=!window.currentLetter || window.currentLetter==='ALL' ||
+      ((r.children[3].innerText||'').trim().toLocaleUpperCase('tr-TR').charAt(0)===window.currentLetter);
+   r.style.display=(okSearch&&okCat&&okLetter)?'':'none';
+ });
+}
+
+document.getElementById('searchInput').oninput=applyFilters;
+document.getElementById('categoryFilter').onchange=applyFilters;
+
+const letters=new Set();
+document.querySelectorAll('#dictionaryTable tbody tr').forEach(r=>{
+ const w=(r.children[3].innerText||'').trim().toLocaleUpperCase('tr-TR');
+ if(w) letters.add(w.charAt(0));
+});
+
+[...letters].sort((a,b)=>a.localeCompare(b,'tr')).concat(['ALL']).forEach(l=>{
+ const b=document.createElement('button');
+ b.textContent=l;
+ b.onclick=()=>{window.currentLetter=l;applyFilters();};
+ document.getElementById('alphabetFilter').appendChild(b);
+});
+
+function downloadCSV(){
+ let csv=[];
+ document.querySelectorAll('#dictionaryTable tr').forEach(r=>{
+   csv.push([...r.querySelectorAll('th,td')].map(c=>'"'+c.innerText.replace(/"/g,'""')+'"').join(','));
+ });
+ const a=document.createElement('a');
+ a.href=URL.createObjectURL(new Blob([csv.join('\n')],{type:'text/csv'}));
+ a.download='NTS_Dictionary.csv';
+ a.click();
+}
+
+function downloadExcel(){
+ const wb=XLSX.utils.table_to_book(document.getElementById('dictionaryTable'));
+ XLSX.writeFile(wb,'NTS_Dictionary.xlsx');
+}
+</script>
+</body>
+</html>
